@@ -1,6 +1,22 @@
 $(function () {
     // 获取用户信息
     getUserInof()
+
+    // 退出
+    var layer = layui.layer
+    $('#btnLogout').on("click", function () {
+        layer.confirm('是否确认退出?', {icon: 3, title:'提示'}, function(index){
+            //do something
+            // alert(111)
+            // 1.清空本地 token
+            localStorage.removeItem('token')
+            // 2.页面跳转
+            location.href = "/login.html"
+
+            // 关闭询问框
+            layer.close(index);
+          });
+    })
 })
 
 // 获取用户信息（封装到入口函数的外面）
