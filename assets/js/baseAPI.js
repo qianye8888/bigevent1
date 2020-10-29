@@ -22,6 +22,8 @@ $.ajaxPrefilter(function (params) {
         }
     }  
 
+
+    // 登录拦截
     // 拦截所有响应，判断身份认证信息
     params.complete =function (res) {
         console.log(res.responseJSON)
