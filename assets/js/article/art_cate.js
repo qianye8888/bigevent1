@@ -96,7 +96,7 @@ $(function (){
         layer.confirm('是否确认删除?', {icon: 3, title:'提示'}, function(index){
             //do something
                 $.ajax({
-                    method: 'POST',
+                    method: 'GET',
                     url: '/my/article/deletecate/' + Id,
                     success: function (res) {
                         if (res.status !== 0) {
